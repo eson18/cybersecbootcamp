@@ -1,0 +1,20 @@
+COMMAND: cat Roulette_Losses | awk -F" " '{print $1, $2}' >> Notes_Player_Analysis
+Losses occurred on the following dates and times:
+0310_win_loss_player_data:05:00:00 AM
+0310_win_loss_player_data:08:00:00 AM
+0310_win_loss_player_data:02:00:00 PM
+0310_win_loss_player_data:08:00:00 PM
+0310_win_loss_player_data:11:00:00 PM
+0312_win_loss_player_data:05:00:00 AM
+0312_win_loss_player_data:08:00:00 AM
+0312_win_loss_player_data:02:00:00 PM
+0312_win_loss_player_data:08:00:00 PM
+0312_win_loss_player_data:11:00:00 PM
+0315_win_loss_player_data:05:00:00 AM
+0315_win_loss_player_data:08:00:00 AM
+0315_win_loss_player_data:02:00:00 PM
+
+COMMAND: cat Roulette_Losses | grep -i Mylie | wc -l
+Via grep analysis, Mylie Schmidt was playing each time the above losses occurred.
+There are a total of 13 instances.
+

@@ -37,29 +37,36 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the __load balancer__ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the __Jump Box__ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+
+| IP Address | Machine ID |
+|-------------|--------------|
+| 99.229.18.174 | Personal Workstation |
+
 
 Machines within the network can only be accessed by __ssh__.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+
+The __ELK VM__ can be accessed by the above Personal Workstation, but only via TCP ports 5601, 9200, and 5044 for Kibana access.
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes | 99.229.18.174, 10.0.1.0/24 |
+| Web-1 | No | 10.0.1.0/24 |
+| Web-2 | No | 10.0.1.0/24 |
+| ESS-ELK | Yes | 99.229.18.174, 10.0.0.0/15 |
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because if another ELK machine is needed for redundancy or replacement, the setup of the new machine can be done quickly by executing the Ansible playbook.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+
+- Install Docker
+- Install Python3
+- Configure VM to use maximum memory (RAM)
+- Download, install, and launch Docker ELK container
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 

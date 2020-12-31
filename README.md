@@ -103,7 +103,7 @@ SSH into the control node and follow the steps below:
 ```
 - Run the playbook using the command `ansible-playbook install-elk.yml`.
 
-- When the playbook execution is completed, navigate to the __ELM VM__ via SSH and ensure that the `sebp/elk:761` container is running by the command: `docker ps` to check that the installation worked as expected.
+- When the playbook execution is completed, navigate to the __ELM VM__ via SSH and ensure that the `sebp/elk:761` container is running by the command: `docker ps` to check that the installation worked as expected. (Screenshot shown earlier in __ELK Configuration__ section.)
 
 - To verify the ELK server is running, navigate to http://[your.ELK-VM.External.IP]:5601/app/kibana. Use the public IP address of your new VM. The following page should display:
 
